@@ -2,20 +2,20 @@ package conversor;
 
 import java.util.Scanner;
 
-public class ConversorMain {
+public class Conversor {
 	
-	public static void main (String[] args) { 
+	public void start() { 
 		seguimiento();
 	}
 	
-	private static void seguimiento() {
+	private void seguimiento() {
 		Moneda[] monedasArrayObj=crearArrayMonedas();
 		//entrada();
 		ejecucion_exc(monedasArrayObj);
 		
 	}
 
-	private static Moneda[] crearArrayMonedas() {
+	private Moneda[] crearArrayMonedas() {
 		Moneda monedasArrayObj[]=new Moneda[3];
 
 		monedasArrayObj[0]=new Euro("EUR");
@@ -26,7 +26,7 @@ public class ConversorMain {
 	}
 	
 	
-	private static void ejecucion_exc(Moneda[]a) {
+	private void ejecucion_exc(Moneda[]a) {
 		boolean a1, a2=false;
 		do {
 			a1 = inicio(a);
@@ -38,7 +38,7 @@ public class ConversorMain {
 		texto("Fin de ejecución.");
 	}
 	
-	private static boolean al_princ() {
+	private boolean al_princ() {
 		int a = 0;
 		boolean bl;
 		texto("¿Salir al menu principal?");
@@ -53,7 +53,7 @@ public class ConversorMain {
 		return bl;
 	}
 
-	private static boolean inicio(Moneda[]a) {
+	private boolean inicio(Moneda[]a) {
 		boolean bl = false;
 		int b;
 		texto("PULSA LA TECLA DE LA OPERACIÓN QUE DESEA REALIZAR.");
@@ -77,7 +77,7 @@ public class ConversorMain {
 		return bl;
 	}
 
-	private static void tasa_act(Moneda[]a) {
+	private void tasa_act(Moneda[]a) {
 		texto("LA TASA DEL CAMBIO ACTUAL ES:");
 		//La plantilla con el formato necesario para el método System.out.format. Aquí usado el formato "leftAlignFormat":
 		//2 caracteres de tipo String | 12 caracteres de tipo String | 10 caracteres digitos: 6 para enteros y 4 para decimales | etc
@@ -96,7 +96,7 @@ public class ConversorMain {
 		System.out.format("   +--------------+--------+    +--------------+--------+%n");
 	}
 	
-	private static void calculo (Moneda[] arr) {
+	private void calculo (Moneda[] arr) {
 		double a=0, c; // variable a para el resultado final del cálculo // variable c para el valor de cantidad de XAF (monedas de Gabon)
 		int b, opc; // variable b para el opción de compra o venta // variable opc para la opción de tipo de moneda elegida
 
@@ -123,7 +123,7 @@ public class ConversorMain {
 		texto("Tienes que pagar " +  s + " " + arr[opc-1].getNombre()); // imprimir el resultado final
 	}
 	
-	private static double cant_XAF (String mens) {
+	private double cant_XAF (String mens) {
 		double a = 0; // para cantidad de XAF (moneda de Gabon)
 		boolean error; // para validación de datos 
 		@SuppressWarnings("resource") // para suprimir el error de Scanner sin cerrar
@@ -148,7 +148,7 @@ public class ConversorMain {
 		return a;
 	}
 	
-	private static int opc_monedas (Moneda[] arr) {
+	private int opc_monedas (Moneda[] arr) {
 		int a = 0; // variable para el valor de elegida de nombre de moneda
 		texto("¿QUE MONEDAS QUIERES CONVERTIR? ELIGE POR SU NUMERO.");
 		//recorrida de array con los nombres de monedas
@@ -159,7 +159,7 @@ public class ConversorMain {
 		return a;
 	}
 
-	private static int valor(int x){
+	private int valor(int x){
 		int a = 0; // el valor de la opción del menú
 		boolean error; // para validación de datos 
 		@SuppressWarnings("resource") // para suprimir el error de Scanner sin cerrar
@@ -184,7 +184,7 @@ public class ConversorMain {
 		return a;
 	}
 
-	private static void texto(String mns) {
+	private void texto(String mns) {
 		final int ALT = 3; //cantidad de lines de altura de header
 		int anch = 60;//cantidad de lines de anchura de header
 		int esp = (anch - mns.length() - 2) / 2;
@@ -203,7 +203,7 @@ public class ConversorMain {
 		}
 	}
 	
-	private static void entrada() {
+	private void entrada() {
 		texto("BIENVENIDO A CAJERO DE BANCO MUNDIAL EN ÁFRICA CENTRAL!");
 		//dibujo en ASCII //con rastros eliminados de caracteres ofensivos que podrían impedir la compilación (Java Escape/Unescape)
 		System.out.println("             _._._                       _._._\n            _|   |_                     _|   |_\n            "
