@@ -2,7 +2,6 @@ package conversor;
 
 class Euro extends Moneda {
 	
-	//private static final double
 	private final double tasa_compra = 0.0015;
 	private final double tasa_venta = 655.96;
 	

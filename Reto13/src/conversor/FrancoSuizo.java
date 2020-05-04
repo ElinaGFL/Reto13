@@ -2,7 +2,6 @@ package conversor;
 
 class FrancoSuizo extends Moneda {
 	
-	//private static final double
 	private final double tasa_compra = 0.0016;
 	private final double tasa_venta = 606.89;
 

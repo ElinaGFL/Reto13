@@ -2,7 +2,6 @@ package conversor;
 
 class Dolar extends Moneda {
 	
-	//private static final double
 	private final double tasa_compra = 0.0017;
 	private final double tasa_venta = 589.01;
 
