@@ -12,7 +12,6 @@ public class Conversor {
 		Moneda[] monedasArrayObj=crearArrayMonedas();
 		//entrada();
 		ejecucion_exc(monedasArrayObj);
-		
 	}
 
 	private Moneda[] crearArrayMonedas() {
@@ -24,7 +23,6 @@ public class Conversor {
 		
 		return monedasArrayObj;
 	}
-	
 	
 	private void ejecucion_exc(Moneda[]a) {
 		boolean a1, a2=false;

@@ -3,8 +3,8 @@ package conversor;
 abstract class Moneda {
 	
 	private String nombre;
-	private double tasa_venta, tasa_compra;
-	
+	private double tasaVenta, tasaCompra;
+
 	Moneda(String nombre) {
 		this.nombre = nombre;
 	}
@@ -14,15 +14,23 @@ abstract class Moneda {
 	}
 	
 	double getTasaVenta() {
-		return this.tasa_venta;
+		return tasaVenta;
 	}
-	
+
+	void setTasaVenta(double tasa_venta) {
+		this.tasaVenta = tasa_venta;
+	}
+
 	double getTasaCompra() {
-		return this.tasa_compra;
+		return tasaCompra;
+	}
+
+	void setTasaCompra(double tasa_compra) {
+		this.tasaCompra = tasa_compra;
 	}
 
 	protected abstract double comprar(double xaf);
 	
 	protected abstract double vender(double xaf);
-
+	
 }
