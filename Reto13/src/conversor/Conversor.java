@@ -10,7 +10,7 @@ public class Conversor {
 	
 	private void seguimiento() {
 		Moneda[] monedasArrayObj=crearArrayMonedas();
-		//entrada();
+		entrada();
 		ejecucion_exc(monedasArrayObj);
 	}
 
@@ -33,7 +33,6 @@ public class Conversor {
 			}
 		} while (a1 == false && a2 == false);
 		texto("Hasta pronto!");
-		texto("Fin de ejecución.");
 	}
 	
 	private boolean al_princ() {

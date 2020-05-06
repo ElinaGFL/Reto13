@@ -30,7 +30,5 @@ abstract class Moneda {
 	}
 
 	protected abstract double comprar(double xaf);
-	
 	protected abstract double vender(double xaf);
-	
 }
