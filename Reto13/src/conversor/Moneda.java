@@ -1,12 +1,14 @@
 package conversor;
 
-abstract class Moneda {
+ class Moneda {
 	
 	private String nombre;
 	private double tasaVenta, tasaCompra;
 
-	Moneda(String nombre) {
+	Moneda(String nombre, double tasaCompra, double tasaVenta) {
 		this.nombre = nombre;
+		this.tasaCompra = tasaCompra;
+		this.tasaVenta = tasaVenta;
 	}
 	
 	String getNombre() {
@@ -29,6 +31,11 @@ abstract class Moneda {
 		this.tasaCompra = tasa_compra;
 	}
 
-	protected abstract double comprar(double xaf);
-	protected abstract double vender(double xaf);
+	protected double comprar(double xaf) {
+		return xaf * this.getTasaCompra();
+	}
+
+	protected double vender(double xaf) {
+		return xaf / this.getTasaVenta();
+	}
 }

@@ -17,9 +17,9 @@ public class Conversor {
 	private Moneda[] crearArrayMonedas() {
 		Moneda monedasArrayObj[]=new Moneda[3];
 
-		monedasArrayObj[0]=new Euro("EUR");
-		monedasArrayObj[1]=new Dolar("USD");
-		monedasArrayObj[2]=new FrancoSuizo("CHF");
+		monedasArrayObj[0]=new Moneda("EUR", 0.0015, 655.96);
+		monedasArrayObj[1]=new Moneda("USD", 0.0017, 589.01);
+		monedasArrayObj[2]=new Moneda("CHF", 0.0016, 606.89);
 		
 		return monedasArrayObj;
 	}
@@ -38,7 +38,7 @@ public class Conversor {
 	private boolean al_princ() {
 		int a = 0;
 		boolean bl;
-		texto("¿Salir al menu principal?");
+		texto("¿Ir al menu principal?");
 		texto("1. Si");
 		texto("2. No, y salir del programa");
 		a = valor(2);
@@ -54,8 +54,8 @@ public class Conversor {
 		boolean bl = false;
 		int b;
 		texto("PULSA LA TECLA DE LA OPERACIÓN QUE DESEA REALIZAR.");
-		texto("1. La tasa de cambio actual.");
-		texto("2. Calcular la tasa de cambio.");
+		texto("1. Ver la tasa de cambio actual.");
+		texto("2. Conversor de divisas.");
 		texto("3. Salir.");
 		b = valor(3);
 		switch (b) {
@@ -98,8 +98,8 @@ public class Conversor {
 		int b, opc; // variable b para el opción de compra o venta // variable opc para la opción de tipo de moneda elegida
 
 		texto(" ¿QUÉ OPERACIÓN DE CAMBIO QUIERES REALIZAR?"); // La cabecera del menú
-		texto("1. Compra (XAF a EUR/USD/etc)"); // Las opciones del menú
-		texto("2. Venta (EUR/USD/etc a XAF");
+		texto("1. Comprar XAF"); // Las opciones del menú
+		texto("2. Vender XAF");
 		b = valor(2);
 		opc = opc_monedas(arr);
 		if (b == 1) {										/* opción 1 para la opción de compra */
@@ -117,7 +117,7 @@ public class Conversor {
 		}
 		String s = String.format ("%.2f", a);  // Formateo de double a a variable s de tipo String para poder imprimir luego y además 
 		// Esto formateara el número desde la coma hasta 2 decimales
-		texto("Tienes que pagar " +  s + " " + arr[opc-1].getNombre()); // imprimir el resultado final
+		texto("Tienes que introducir " +  s + " " + arr[opc-1].getNombre()); // imprimir el resultado final
 	}
 	
 	private double cant_XAF (String mens) {
@@ -147,7 +147,7 @@ public class Conversor {
 	
 	private int opc_monedas (Moneda[] arr) {
 		int a = 0; // variable para el valor de elegida de nombre de moneda
-		texto("¿QUE MONEDAS QUIERES CONVERTIR? ELIGE POR SU NUMERO.");
+		texto("¿En que monedas quieres recibir el cambio?");
 		//recorrida de array con los nombres de monedas
 		for (int i = 0; i < arr.length; i++) {
 			texto(i+1 + ". " + arr[i].getNombre());
@@ -210,6 +210,5 @@ public class Conversor {
 				+ "   .-\"-.   :::  |[-|-]|(()))()\n     ()))(()|     | |~|~|  |_|_|  |~|~| |     |()))(()\n        ||  |_____|_|_|_|__|_"
 				+ "|_|__|_|_|_|_____|  ||\n     ~ ~^^ @@@@@@@@@@@@@@/=======\\\\@@@@@@@@@@@@@@ ^^~ ~\n          ^~^~                     "
 				+ "           ~^~^");
-		texto("FOLLOW THE WHITE RABBIT");
 	}
 }
